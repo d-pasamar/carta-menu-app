@@ -1,18 +1,52 @@
-# React + Vite
+# Carta Menú React 🍰☕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto UT02 - DAM 2º Nocturno  
+Creación de una carta de restaurante con React 19.1 y Atomic Design.
 
-Currently, two official plugins are available:
+## 🧩 Componentes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Nivel Atomic Design | Componente     | Descripción                                      |
+|---------------------|----------------|--------------------------------------------------|
+| Átomo               | `Item.jsx`     | Muestra nombre y precio de un producto.          |
+| Molécula            | `Section.jsx`  | Agrupa productos bajo un título e imagen.        |
+| Organismo           | `Menu.jsx`     | Renderiza todas las secciones del menú.          |
+| Organismo           | `Header.jsx`   | Título principal y subtítulo de la carta.        |
+| Organismo           | `Footer.jsx`   | Dirección y enlace web.                          |
+| Template            | `App.jsx`      | Estructura general de la carta.                  |
+| Página              | `main.jsx`     | Punto de entrada de la aplicación.               |
 
-## React Compiler
+## 📦 Tecnologías
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React 19.1
+- Vite
+- JSX
+- CSS modular
+- Git + GitHub
 
-Note: This will impact Vite dev & build performances.
+## 📁 Estructura del proyecto
+```plaintext
+src/
+│── Header.jsx 
+│── Menu.jsx 
+│── Section.jsx 
+│── Item.jsx 
+│── Footer.jsx 
+│── App.jsx 
+│── main.jsx 
+└── styles.css
+```
 
-## Expanding the ESLint configuration
+## 🧠 Enfoque académico
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Este proyecto replica una carta de restaurante basada en el tutorial de freeCodeCamp, migrando de HTML estático a componentes React. Se ha seguido el modelo de Atomic Design para estructurar los componentes y se ha documentado cada paso en un informe PDF.
+
+## 📄 Autor
+
+Alumno: David García Pasamar  
+Profesor: José Francisco Lorenzo Hernández  
+Asignatura: Programación multimedia y dispositivos móviles  
+Curso: 2º DAM (nocturno)
+
+## 🔗 Enlace al proyecto base
+
+[freeCodeCamp - Design a Cafe Menu](https://www.freecodecamp.org/learn/full-stack-developer/workshop-cafe-menu/step-1)
