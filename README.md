@@ -5,15 +5,16 @@ Creación de una carta de restaurante con React 19.1 y Atomic Design.
 
 ## 🧩 Componentes
 
-| Nivel Atomic Design | Componente     | Descripción                                      |
-|---------------------|----------------|--------------------------------------------------|
-| Átomo               | `Item.jsx`     | Muestra nombre y precio de un producto.          |
-| Molécula            | `Section.jsx`  | Agrupa productos bajo un título e imagen.        |
-| Organismo           | `Menu.jsx`     | Renderiza todas las secciones del menú.          |
-| Organismo           | `Header.jsx`   | Título principal y subtítulo de la carta.        |
-| Organismo           | `Footer.jsx`   | Dirección y enlace web.                          |
-| Template            | `App.jsx`      | Estructura general de la carta.                  |
-| Página              | `main.jsx`     | Punto de entrada de la aplicación.               |
+| Nivel Atomic Design | Componente    | Descripción                               |
+| ------------------- | ------------- | ----------------------------------------- |
+| Átomo               | `Item.jsx`    | Muestra nombre y precio de un producto.   |
+| Átomo               | `Line.jsx`    | Línea divisoria visual entre organismos.  |
+| Molécula            | `Section.jsx` | Agrupa productos bajo un título e imagen. |
+| Organismo           | `Menu.jsx`    | Renderiza todas las secciones del menú.   |
+| Organismo           | `Header.jsx`  | Título principal y subtítulo de la carta. |
+| Organismo           | `Footer.jsx`  | Dirección y enlace web.                   |
+| Template            | `App.jsx`     | Estructura general de la carta.           |
+| Página              | `main.jsx`    | Punto de entrada de la aplicación.        |
 
 ## 📦 Tecnologías
 
@@ -24,16 +25,28 @@ Creación de una carta de restaurante con React 19.1 y Atomic Design.
 - Git + GitHub
 
 ## 📁 Estructura del proyecto
+
 ```plaintext
 src/
-│── Header.jsx 
-│── Menu.jsx 
-│── Section.jsx 
-│── Item.jsx 
-│── Footer.jsx 
-│── App.jsx 
-│── main.jsx 
-└── styles.css
+├── components/
+│   ├── Header/
+│   │   ├── Header.jsx
+│   │   └── header.css
+│   ├── Menu/
+│   │   ├── Menu.jsx
+│   │   ├── menu.css
+│   │   ├── Section.jsx
+│   │   ├── section.css
+│   │   ├── Item.jsx
+│   │   └── item.css
+│   ├── Footer/
+│   │   ├── Footer.jsx
+│   │   └── footer.css
+│   │── Line.jsx
+│   └── line.css
+│── App.jsx
+│── main.jsx
+└── App.css
 ```
 
 ## 🧠 Enfoque académico
