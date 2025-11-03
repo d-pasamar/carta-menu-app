@@ -4,9 +4,14 @@ import "./menu.css";
 function Menu({
   data,
   modoEdicion,
+  // Props CRUD de Categoría
   onAgregarCategoria,
   onEliminarCategoria,
   onEditarCategoria,
+  // Props CRUD de Item
+  onAgregarItem,
+  onEliminarItem,
+  onEditarItem,
 }) {
   return (
     <main>
@@ -17,8 +22,13 @@ function Menu({
           image={section.image}
           items={section.items}
           modoEdicion={modoEdicion}
+          // Funciones CRUD de Categoría
           onEliminarCategoria={onEliminarCategoria}
           onEditarCategoria={onEditarCategoria}
+          // Funciones CRUD de Item
+          onAgregarItem={onAgregarItem}
+          onEliminarItem={onEliminarItem}
+          onEditarItem={onEditarItem}
         />
       ))}
 

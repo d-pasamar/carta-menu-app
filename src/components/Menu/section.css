@@ -28,3 +28,34 @@ img {
   margin: 0;
   font-size: 1.4rem;
 }
+
+/* Botón agregar item */
+
+.btn-agregar-item {
+  /* Alineación y Tamaño (similar al de categoría, pero más pequeño) */
+  display: block;
+  width: 180px; /* Un poco más estrecho que el de categoría (200px) */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-left: auto; /* Centrar el botón dentro de la sección */
+  margin-right: auto;
+
+  /* Colores y Bordes (tomado de .btn-agregar-categoria) */
+  background-color: burlywood;
+  border: 2px solid #8b5e3c;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+
+  /* Tipografía y Efectos */
+  font-size: 0.8rem; /* Ligeramente más pequeño */
+  font-weight: bold;
+  color: #4e342e;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-agregar-item:hover {
+  background-color: #b2dfdb; /* Mismo color de hover */
+  transform: scale(1.05);
+}

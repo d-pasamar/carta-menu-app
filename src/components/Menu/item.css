@@ -14,3 +14,50 @@
   text-align: right;
   width: 25%;
 }
+
+/* Contenedor principal: Alineación horizontal de Detalles y Botones */
+.item-editable {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  transition: background-color 0.3s ease;
+}
+
+/* Contenedor de Detalles en MODO EDICIÓN */
+.item-editable .item-details {
+  flex-grow: 1; /* Ocupa el espacio restante para empujar BotonesCRUD */
+  display: block; /* Asegura que nombre/precio sigan en línea */
+  align-items: center;
+  margin-right: 15px; /* Espacio antes de los botones CRUD */
+}
+
+/* Estilos de Texto en Modo Edición (Asegurando que usen los anchos originales) */
+.item-editable .flavor {
+  width: 75%; /* Re-establecemos el ancho */
+  display: inline-block; /* Re-establecemos la alineación */
+  margin: 5px 0;
+}
+
+.item-editable .price {
+  width: 25%; /* Re-establecemos el ancho */
+  display: inline-block; /* Re-establecemos la alineación */
+  margin: 5px 0;
+}
+
+/* Estilos para los Inputs de Edición */
+.item-editable .item-name-input {
+  flex-grow: 1; /* Usa el espacio restante */
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.item-editable .item-price-input {
+  width: 80px; /* Ancho fijo y legible para el precio */
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
+}

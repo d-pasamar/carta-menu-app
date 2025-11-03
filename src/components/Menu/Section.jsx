@@ -11,6 +11,9 @@ function Section({
   modoEdicion,
   onEliminarCategoria,
   onEditarCategoria,
+  onAgregarItem,
+  onEliminarItem,
+  onEditarItem,
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [nuevoTitulo, setNuevoTitulo] = useState(title);
@@ -56,12 +59,31 @@ function Section({
       ) : (
         <h2 className="titulo-centrado">{title}</h2>
       )}
-
+      {/* Imagen de la Categoría */}
       <img src={image} alt={title} />
-
-      {items.map((item, index) => (
-        <Item key={item.name} name={item.name} price={item.price} />
+      {/* Listado de Items */}
+      {items.map((item) => (
+        <Item
+          key={item.name}
+          name={item.name}
+          price={item.price}
+          modoEdicion={modoEdicion}
+          // Pasamos el título de la categoría para las funciones CRUD de item
+          tituloCategoria={title}
+          // Pasamos las funciones de CRUD
+          onEliminarItem={onEliminarItem}
+          onEditarItem={onEditarItem}
+        />
       ))}
+      {/* Botón para Añadir Item (solo en modo edición) */}
+      {modoEdicion && (
+        <button
+          className="btn-agregar-item"
+          onClick={() => onAgregarItem(title)}
+        >
+          ➕ Añadir Item
+        </button>
+      )}
     </section>
   );
 }

@@ -44,6 +44,7 @@ export default function useCategorias(menuData) {
 
   return {
     categorias,
+    setCategorias,
     agregarCategoria,
     eliminarCategoria,
     editarCategoria,
