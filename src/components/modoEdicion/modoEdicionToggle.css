@@ -1,0 +1,27 @@
+/* src/components/modoEdicion/ModoEdicionToggle.css */
+
+.modo-edicion-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  max-width: 120px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modo-edicion-toggle:hover {
+  background-color: #ffe0b2;
+  color: #d35400;
+}
+
+.modo-edicion-toggle:active {
+  background-color: #ffcc80;
+  transform: scale(0.98);
+}

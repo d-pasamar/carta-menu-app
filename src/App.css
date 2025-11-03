@@ -5,6 +5,7 @@ body {
 }
 
 .menu {
+  position: relative;
   width: 80%;
   background-color: burlywood;
   margin-left: auto;

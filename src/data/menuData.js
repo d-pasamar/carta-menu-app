@@ -2,9 +2,9 @@
 // Este archivo contiene los datos estáticos del menú del restaurante.
 // Comprende de un array de objetos.
 // Cada sección incluye:
-// - 'title': nombre de la categoría
-// - 'image': una URL con el icono representativo de la categoría
-// - 'items': array de objetos con 'name' y 'price' para cada producto
+// - 'title': nombre de la categoría.
+// - 'image': una URL con el icono representativo de la categoría.
+// - 'items': array de objetos con 'name' y 'price' para cada producto.
 
 export const menuData = [
   {
