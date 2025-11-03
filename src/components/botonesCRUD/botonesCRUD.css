@@ -8,7 +8,8 @@
 }
 
 .btn-editar,
-.btn-eliminar {
+.btn-eliminar,
+.btn-guardar {
   background-color: burlywood;
   border: 2px solid #8b5e3c;
   border-radius: 6px;
@@ -28,5 +29,10 @@
 
 .btn-eliminar:hover {
   background-color: #ef9a9a;
+  transform: scale(1.05);
+}
+
+.btn-guardar:hover {
+  background-color: #c8e6c9;
   transform: scale(1.05);
 }
