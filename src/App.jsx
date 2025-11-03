@@ -22,7 +22,7 @@ function App() {
         setModoEdicion={setModoEdicion}
       />
       <Line />
-      <Menu data={menuData} />
+      <Menu data={menuData} modoEdicion={modoEdicion} />
       <Line />
       <Footer />
     </div>

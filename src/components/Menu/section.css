@@ -1,7 +1,12 @@
-h2 {
+.titulo-centrado {
   font-family: Impact, serif;
   font-size: 30px;
   text-align: center;
+}
+
+.titulo-editable {
+  font-family: Impact, serif;
+  font-size: 30px;
 }
 
 img {
@@ -9,4 +14,17 @@ img {
   margin-top: -25px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.section-header h2 {
+  font-family: Impact, serif;
+  margin: 0;
+  font-size: 1.4rem;
 }

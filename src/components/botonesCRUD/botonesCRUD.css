@@ -1,0 +1,32 @@
+/* src/components/botonesCRUD/botonesCRUD.css */
+
+.botones-crud {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn-editar,
+.btn-eliminar {
+  background-color: burlywood;
+  border: 2px solid #8b5e3c;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #4e342e;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-editar:hover {
+  background-color: #ffcc80;
+  transform: scale(1.05);
+}
+
+.btn-eliminar:hover {
+  background-color: #ef9a9a;
+  transform: scale(1.05);
+}

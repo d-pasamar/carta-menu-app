@@ -1,7 +1,7 @@
 import Section from "./Section";
 import "./menu.css";
 
-function Menu({ data }) {
+function Menu({ data, modoEdicion }) {
   return (
     <main>
       {data.map((section, index) => (
@@ -10,6 +10,7 @@ function Menu({ data }) {
           title={section.title}
           image={section.image}
           items={section.items}
+          modoEdicion={modoEdicion}
         />
       ))}
     </main>
