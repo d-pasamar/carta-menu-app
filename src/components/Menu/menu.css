@@ -1,3 +1,27 @@
 main {
   margin-bottom: 25px;
 }
+
+.btn-agregar-categoria {
+  display: block;
+  width: 200px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: burlywood;
+  border: 2px solid #8b5e3c;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #4e342e;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-agregar-categoria:hover {
+  background-color: #b2dfdb;
+  transform: scale(1.05);
+}

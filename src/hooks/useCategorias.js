@@ -2,6 +2,9 @@
 // Hook para gestión de las categorías del menú.
 
 import { useState } from "react";
+import defaultImage from "../img/Meal.png";
+
+const DEFAULT_IMAGE_URL = defaultImage;
 
 export default function useCategorias(menuData) {
   const initialState = JSON.parse(JSON.stringify(menuData));
@@ -11,7 +14,7 @@ export default function useCategorias(menuData) {
   const agregarCategoria = () => {
     const nuevaCategoria = {
       title: "Nueva categoría",
-      image: "ruta/imagen.jpg",
+      image: DEFAULT_IMAGE_URL,
       items: [],
     };
     setCategorias([...categorias, nuevaCategoria]);

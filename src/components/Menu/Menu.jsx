@@ -10,7 +10,7 @@ function Menu({
 }) {
   return (
     <main>
-      {data.map((section, index) => (
+      {data.map((section) => (
         <Section
           key={section.title}
           title={section.title}
@@ -21,6 +21,12 @@ function Menu({
           onEditarCategoria={onEditarCategoria}
         />
       ))}
+
+      {modoEdicion && (
+        <button className="btn-agregar-categoria" onClick={onAgregarCategoria}>
+          ➕ Agregar Categoría
+        </button>
+      )}
     </main>
   );
 }
