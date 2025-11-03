@@ -3,6 +3,24 @@
 Proyecto UT02 - DAM 2º Nocturno  
 Creación de una carta de restaurante con React 19.1 y Atomic Design.
 
+## ✨ Novedades y Funcionalidad CRUD
+
+El proyecto ha sido mejorado para incluir la gestión completa de datos, permitiendo al usuario añadir, editar y eliminar categorías e ítems en tiempo real.
+
+CRUD Implementado (Create, Read, Update, Delete)
+Categorías: Se pueden añadir, renombrar y eliminar secciones completas del menú (ej: "Postres").
+
+Ítems: Se pueden añadir nuevos productos a cualquier categoría, y editar su nombre y precio, o eliminarlos.
+
+Modo Edición: Un interruptor global activa la visibilidad de los Botones CRUD en toda la interfaz.
+
+🎣 Gestión de Estado con Hooks
+El manejo de datos se centraliza en Custom Hooks para garantizar la inmutabilidad del estado y separar la lógica de negocio de los componentes visuales.
+
+useCategorias.js: Es la fuente de verdad (Source of Truth), encargada de almacenar y actualizar el estado de todo el menú (categorías e ítems anidados).
+
+useItems.js: Delega la lógica de manipulación de los ítems (anidados dentro de las categorías), asegurando que todas las modificaciones internas se realicen de forma inmutable a través de setCategorias.
+
 ## 🧩 Componentes
 
 | Nivel Atomic Design | Componente    | Descripción                               |
@@ -29,6 +47,12 @@ Creación de una carta de restaurante con React 19.1 y Atomic Design.
 ```plaintext
 src/
 ├── components/
+│   ├── botonesCRUD/
+│   │   ├── BotonesCRUD.jsx
+│   │   └── botonesCrud.css
+│   ├── modoEdicion/
+│   │   ├── ModoEdicionToogle.jsx
+│   │   └── modoEdicionToogle.css
 │   ├── Header/
 │   │   ├── Header.jsx
 │   │   └── header.css
@@ -44,6 +68,13 @@ src/
 │   │   └── footer.css
 │   │── Line.jsx
 │   └── line.css
+├── hooks/
+│   ├── useCategorias.js
+│   └── useItems.js
+├── img/
+│   └── Meal.png
+├── data/
+│   └── menuData.js
 │── App.jsx
 │── main.jsx
 └── App.css

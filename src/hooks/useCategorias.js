@@ -22,9 +22,7 @@ export default function useCategorias(menuData) {
 
   // ELIMINAR CATEGORIA
   const eliminarCategoria = (titulo) => {
-    console.log(`Intentando eliminar: ${titulo}`);
     const nuevas = categorias.filter((cat) => cat.title !== titulo);
-    console.log(`Categorías restantes: ${nuevas.length}`);
     setCategorias(nuevas);
   };
 
