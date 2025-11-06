@@ -40,13 +40,29 @@ export default function useCategorias(usuario_id) {
     fetchCategorias();
   }, [usuario_id]);
 
+  // Petición POST para añadir categorías
+  const agregarCategoria = async () => {
+    try {
+      const nuevaCategoria = {
+        nombre: "Nueva categoría desde Local",
+        usuario_id,
+        orden: null,
+      };
+
+      await categoriasAPI.createCategoria(nuevaCategoria);
+      await fetchCategorias();
+    } catch (err) {
+      console.error("Error al agregar categoría:", err);
+    }
+  };
+
   // Devuelve estado y funciones para que el componente los use
   return {
     categorias,
-    setCategorias,
     isLoading,
     error,
     fetchCategorias,
+    agregarCategoria,
   };
 }
 
