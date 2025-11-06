@@ -10,28 +10,17 @@ import ModoEdicionToggle from "./components/modoEdicion/ModoEdicionToggle";
 import useCategorias from "./hooks/useCategorias";
 import { useItems } from "./hooks/useItems";
 
-// DATOS BASE DE LA APP
-import { menuData } from "./data/menuData";
-
 import "./App.css";
 
 function App() {
   const [modoEdicion, setModoEdicion] = useState(false);
 
-  // OBTIENE ESTADO Y SETTER
-  const {
-    categorias,
-    setCategorias,
-    agregarCategoria,
-    eliminarCategoria,
-    editarCategoria,
-  } = useCategorias(menuData);
+  // OBTIENE ESTADO
+  const { categorias, agregarCategoria, eliminarCategoria, editarCategoria } =
+    useCategorias(7032); // Nuestro usuario_id
 
   // CONECTAR HOOK
-  const { agregarItem, eliminarItem, editarItem } = useItems(
-    categorias,
-    setCategorias
-  );
+  const { agregarItem, eliminarItem, editarItem } = useItems(categorias);
 
   return (
     <div className="menu">

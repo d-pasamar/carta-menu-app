@@ -1,9 +1,57 @@
 // src/hooks/useCategorias.js
 // Hook para gestión de las categorías del menú.
+import { useEffect, useState } from "react";
+import categoriasAPI from "../services/categoriasAPI"; // Importa API
 
-import { useState } from "react";
 import defaultImage from "../img/Meal.png";
 
+export default function useCategorias(usuario_id) {
+  const [categorias, setCategorias] = useState([]); // Lista de categorías cargados desde la Base de Datos
+  const [isLoading, setIsLoading] = useState(true); // Esta cargando?
+  const [error, setError] = useState(null); // Mensaje de error si algo falla
+
+  // Petición GET para obtener categorías
+  const fetchCategorias = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const response = await categoriasAPI.getCategorias(usuario_id); // Llama a la función getCategorias() API
+      const categoriasAPIData = response.data; // accede al array dentro del objeto (donde se almacena)
+
+      // Adaptación para el frontend
+      const transformadas = categoriasAPIData.map((cat) => ({
+        id: cat.id,
+        title: cat.nombre,
+        image: defaultImage,
+        items: [],
+      }));
+
+      setCategorias(transformadas); // Actualiza la lista
+    } catch (err) {
+      setError(err.message || "Error al cargar categorias");
+      console.error("Error al cargar categorias:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Se ejecuta al montar el componente
+  useEffect(() => {
+    fetchCategorias();
+  }, [usuario_id]);
+
+  // Devuelve estado y funciones para que el componente los use
+  return {
+    categorias,
+    setCategorias,
+    isLoading,
+    error,
+    fetchCategorias,
+  };
+}
+
+// CÓDIGO ANTERIOR
+/* 
 const DEFAULT_IMAGE_URL = defaultImage;
 
 export default function useCategorias(menuData) {
@@ -64,4 +112,4 @@ export default function useCategorias(menuData) {
     eliminarCategoria,
     editarCategoria,
   };
-}
+} */
