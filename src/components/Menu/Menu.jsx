@@ -17,7 +17,8 @@ function Menu({
     <main>
       {data.map((section) => (
         <Section
-          key={section.title}
+          key={section.id} // Se crea id único basado en timestamp
+          id={section.id} // Pasamos el nuevo id a section
           title={section.title}
           image={section.image}
           items={section.items}

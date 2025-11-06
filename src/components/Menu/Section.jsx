@@ -5,6 +5,7 @@ import Item from "./Item";
 import "./section.css";
 
 function Section({
+  id,
   title,
   image,
   items,
@@ -19,7 +20,7 @@ function Section({
   const [nuevoTitulo, setNuevoTitulo] = useState(title);
 
   const handleSave = () => {
-    onEditarCategoria(title, nuevoTitulo);
+    onEditarCategoria(id, nuevoTitulo); // Actualización, se pasa id en lugar de title
     setIsEditing(false);
   };
 
@@ -52,7 +53,7 @@ function Section({
           {/* Conectar la acción de editar al BotonesCRUD */}
           <BotonesCRUD
             isEditing={isEditing}
-            onEliminar={() => onEliminarCategoria(title)}
+            onEliminar={() => onEliminarCategoria(id)}
             onEditar={handleCRUDBtnClick} // Conectar el botón de editar
           />
         </div>
