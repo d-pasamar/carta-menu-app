@@ -44,15 +44,25 @@ export default function useCategorias(usuario_id) {
   const agregarCategoria = async () => {
     try {
       const nuevaCategoria = {
-        nombre: "Nueva categoría desde Local",
+        nombre: "Nueva categoría",
         usuario_id,
         orden: null,
       };
 
       await categoriasAPI.createCategoria(nuevaCategoria);
-      await fetchCategorias();
+      await fetchCategorias(); // Recarga desde la API
     } catch (err) {
       console.error("Error al agregar categoría:", err);
+    }
+  };
+
+  // Petición DELETE para eliminar categorías
+  const eliminarCategoria = async (id) => {
+    try {
+      await categoriasAPI.deleteCategoria(id, usuario_id);
+      await fetchCategorias(); // Recarga desde la API
+    } catch (err) {
+      console.error("Error al eliminar categoría:", err);
     }
   };
 
@@ -63,6 +73,7 @@ export default function useCategorias(usuario_id) {
     error,
     fetchCategorias,
     agregarCategoria,
+    eliminarCategoria,
   };
 }
 

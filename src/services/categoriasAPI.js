@@ -20,5 +20,16 @@ const createCategoria = async (categoria) => {
   return res.json();
 };
 
+// DELETE: Eliminar categoría por ID
+const deleteCategoria = async (id, usuario_id) => {
+  const res = await fetch(`${BASE_URL}${id}`, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ usuario_id }),
+  });
+  if (!res.ok) throw new Error("Error al eliminar categoría");
+  return res.json();
+};
+
 // Exporta todas las funciones como un objeto para uso externo
-export default { getCategorias, createCategoria };
+export default { getCategorias, createCategoria, deleteCategoria };
