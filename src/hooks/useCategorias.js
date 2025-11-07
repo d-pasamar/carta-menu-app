@@ -66,6 +66,22 @@ export default function useCategorias(usuario_id) {
     }
   };
 
+  // Petición PUT para editar categorías
+  const editarCategoria = async (id, nuevoNombre) => {
+    try {
+      const datosActualizados = {
+        usuario_id,
+        nombre: nuevoNombre,
+        orden: null,
+      };
+
+      await categoriasAPI.updateCategoria(id, datosActualizados);
+      await fetchCategorias(); // Recarga desde la API
+    } catch (err) {
+      console.error("Error al editar categoría:", err);
+    }
+  };
+
   // Devuelve estado y funciones para que el componente los use
   return {
     categorias,
@@ -74,6 +90,7 @@ export default function useCategorias(usuario_id) {
     fetchCategorias,
     agregarCategoria,
     eliminarCategoria,
+    editarCategoria,
   };
 }
 
