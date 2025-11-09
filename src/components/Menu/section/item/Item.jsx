@@ -1,7 +1,7 @@
-// src/components/Menu/item/Item.jsx
+// src/components/Menu/section/item/Item.jsx
 
 import { useState } from "react";
-import BotonesCRUD from "../../botonesCRUD/BotonesCrud";
+import BotonesCRUD from "../../../botonesCRUD/BotonesCrud";
 import "./item.css";
 
 /**
@@ -27,7 +27,7 @@ export default function Item({
   onEliminarItem,
   onEditarItem,
 }) {
-  // Estados locales para edición
+  // ===== ESTADO LOCAL =====
   const [isEditing, setIsEditing] = useState(false);
   const [nuevoNombre, setNuevoNombre] = useState(name);
   const [nuevoPrecio, setNuevoPrecio] = useState(price);

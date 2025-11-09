@@ -1,6 +1,6 @@
 // src/components/Menu/Menu.jsx
 
-import Section from "./Section";
+import Section from "./section/Section";
 import "./menu.css";
 
 /**
@@ -31,7 +31,7 @@ export default function Menu({
   onEliminarItem,
   onEditarItem,
 }) {
-  // ******** LOGICA ********
+  // ===== LOGICA =====
 
   // Renderizado condicional de las secciones
   const secciones = Array.isArray(data)
@@ -61,7 +61,7 @@ export default function Menu({
     </button>
   );
 
-  // ******** RETURN ********
+  // ===== RETURN =====
 
   return (
     <main>
