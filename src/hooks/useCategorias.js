@@ -1,4 +1,5 @@
 // src/hooks/useCategorias.js
+
 // Hook para gestión de las categorías del menú.
 import { useEffect, useState } from "react";
 import categoriasAPI from "../services/categoriasAPI"; // Importa API

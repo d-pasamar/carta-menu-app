@@ -10,20 +10,20 @@ import "./item.css";
  * Permite edición o eliminación según el modo actual.
  *
  * @param {Object} props - Propiedades del componente.
+ * @param {number} props.id - ID único del ítem.
  * @param {string} props.name - Nombre del ítem (ej. "Pizza Margarita").
  * @param {number} props.price - Precio del ítem en la carta.
  * @param {boolean} props.modoEdicion - Indica si el componente está en modo edición.
- * @param {string} props.tituloCategoria - Categoría a la que pertenece el ítem.
  * @param {Function} props.onEliminarItem - Callback para eliminar el ítem.
  * @param {Function} props.onEditarItem - Callback para editar el ítem.
  * @returns {JSX.Element} - Elemento JSX que representa el ítem.
  */
 
 export default function Item({
+  id, // Id del item: Reemplaza al anterior tituloCategoria
   name,
   price,
   modoEdicion,
-  tituloCategoria,
   onEliminarItem,
   onEditarItem,
 }) {
@@ -45,46 +45,28 @@ export default function Item({
    */
 
   const handleSave = () => {
-    // Llama a la función de edición del hook useItems.js
-    onEditarItem(
-      tituloCategoria, // Categoría actual
-      name, // Nombre original del ítem
-      nuevoNombre.trim(), // Nuevo nombre
-      parseFloat(nuevoPrecio) // Nuevo precio como número
-    );
-    setIsEditing(false);
+    if (nuevoNombre.trim() && !isNaN(parseFloat(nuevoPrecio))) {
+      // 💡 Llamada a la función del hook usando el ID
+      onEditarItem(
+        id, // Usamos el ID del ítem
+        nuevoNombre,
+        parseFloat(nuevoPrecio)
+      );
+      setIsEditing(false);
+    }
   };
 
   /**
-   * Manejador que controla el inicio o cierre del modo edición.
-   * - Si ya está en edición y no hay cambios, cierra sin guardar.
-   * - Si no está en edición, activa el modo edición.
-   *
-   * @returns {void} - Actualiza el estado de edición, no devuelve valor.
+   * Manejador que activa el modo edición del ítem.
+   * @returns {void} - Activa el modo edición.
    */
-
   const handleEditClick = () => {
-    // Si ya estamos editando y el nombre no ha cambiado, cerramos sin guardar
-    if (
-      isEditing &&
-      nuevoNombre.trim() === name &&
-      parseFloat(nuevoPrecio) === price
-    ) {
-      setIsEditing(false);
-      return;
-    }
-    // Si no estamos editando, empezamos a editar
     setIsEditing(true);
   };
 
   /**
-   * Referencia al manejador de acción CRUD según el estado de edición.
-   * - Si está en modo edición, apunta a handleSave (guardar cambios).
-   * - Si no está en modo edición, apunta a handleEditClick (activar edición).
-   *
-   * @type {Function} - Función de manejador que se ejecuta al hacer clic.
+   * Manejador que alterna entre los modos 'Editar' y 'Guardar' el ítem.
    */
-
   const handleCRUDBtnClick = isEditing ? handleSave : handleEditClick;
 
   // ===== LOGICA =====
@@ -115,7 +97,9 @@ export default function Item({
       </>
     ) : (
       <>
-        <p className="flavor">{name}</p>
+        <p className="flavor" onClick={modoEdicion ? handleEditClick : null}>
+          {name}
+        </p>
         <p className="price">${precioDisplay}</p>
       </>
     );
@@ -124,7 +108,7 @@ export default function Item({
   const botonesCRUD = modoEdicion && (
     <BotonesCRUD
       isEditing={isEditing}
-      onEliminar={() => onEliminarItem(tituloCategoria, name)}
+      onEliminar={() => onEliminarItem(id)}
       onEditar={handleCRUDBtnClick}
     />
   );
