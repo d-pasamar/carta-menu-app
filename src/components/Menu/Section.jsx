@@ -1,6 +1,6 @@
 import { useState } from "react";
 import BotonesCRUD from "../botonesCRUD/BotonesCrud";
-import Item from "./Item";
+import Item from "./item/Item";
 
 import "./section.css";
 
